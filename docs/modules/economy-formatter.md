@@ -1,14 +1,14 @@
 # Economy Formatter
 
-QuickShop use Economy Formatter to format balance to human readable text.
+QuickShop uses the Economy Formatter to format account balances to human readable text.
 
-## Work with Economy plugins
+## Economy plugins - The Default
 
-By default, QuickShop will request your installed economy plugin to format balance, but sometimes it may doesn't work (like eco plugin author returns a null), then QuickShop will fallback to internal economy formatter for make sure balance can be formatted.
+By default, QuickShop will request that your installed economy plugin formats the balance, but sometimes it this may not work. (E.g., Eco plugin author returns a null.) If the economy plugin cannot format the balance, then QuickShop will fallback to internal economy formatter to determine how the balance should be formatted.
 
-## Internal Formatter
+## Internal Formatter - The Backup
 
-Internal formatter only will be used when economy plugin's one doesn't work, but anyway, you can force enable it by tweak settings in config.yml:
+Internal formatter only will be used when the economy plugin's formatter doesn't work. However, you can force enable it by changing the following settings in config.yml:
 
 ```yaml
   #This should fix Vault or an economy plugin incorrectly processing the price and returning a "0" result.
@@ -16,7 +16,7 @@ Internal formatter only will be used when economy plugin's one doesn't work, but
   disable-vault-format: false
 ```
 
-Then you can use these options to customize it:
+Use these options to customize it:
 
 ```yaml
 #Whether to use decimal format to display money.
